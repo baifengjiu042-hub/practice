@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mudassra Malik| Political Science Portfolio</title>
+  <style>
+    /* ===== COLORS: change these 5 values to restyle the whole page ===== */
+    :root {
+      --paper: #f3f6f4;
+      --ink: #14262b;
+      --teal: #0f6b6b;
+      --sand: #e6dcc8;
+      --line: #c5d3cf;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    h1, h2, h3, nav, button, .tag {
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+    }
+    a { color: var(--teal); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px;
+      padding: 16px 6vw; border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; background: var(--paper); z-index: 10;
+    }
+    nav strong { font-size: 1.1rem; }
+    nav ul { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: var(--ink); font-size: .95rem; }
+    nav a:hover { color: var(--teal); text-decoration: underline; }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
+      align-items: center; padding: 80px 6vw;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 18px; }
+    .hero p { max-width: 55ch; font-size: 1.1rem; }
+    .btn {
+      display: inline-block; margin-top: 24px; padding: 12px 26px;
+      background: var(--teal); color: #fff; text-decoration: none;
+      border-radius: 4px; font-family: "Trebuchet MS", sans-serif;
+    }
+    .btn:hover { background: var(--ink); }
+    .photo {
+      aspect-ratio: 4/5; background: var(--sand); border: 2px solid var(--ink);
+      display: grid; place-items: center; text-align: center; padding: 20px;
+      font-family: "Trebuchet MS", sans-serif; overflow: hidden;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 64px 6vw; border-top: 1px solid var(--line); }
+    section h2 { font-size: 1.9rem; margin-bottom: 24px; }
+    .narrow { max-width: 70ch; }
+
+    /* Skills */
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag { background: var(--sand); padding: 6px 14px; border-radius: 20px; font-size: .9rem; }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .project { border-left: 4px solid var(--teal); padding: 6px 0 6px 18px; }
+    .project h3 { margin-bottom: 6px; }
+
+    /* Timeline */
+    .timeline { list-style: none; border-left: 2px solid var(--line); padding-left: 22px; }
+    .timeline li { margin-bottom: 22px; }
+    .timeline b { font-family: "Trebuchet MS", sans-serif; }
+
+    /* Digital skills checklist (interactive) */
+    .progress { height: 10px; background: var(--line); border-radius: 5px; margin: 14px 0; max-width: 420px; }
+    .progress div { height: 100%; width: 0; background: var(--teal); border-radius: 5px; transition: width .3s; }
+    .checks label { display: block; cursor: pointer; }
+
+    /* Contact */
+    form { display: grid; gap: 12px; max-width: 480px; }
+    input, textarea {
+      padding: 10px; font: inherit; border: 1px solid var(--ink);
+      background: #fff; border-radius: 4px;
+    }
+    button {
+      padding: 12px; background: var(--ink); color: #fff; border: 0;
+      border-radius: 4px; cursor: pointer; font-size: 1rem;
+    }
+    button:hover { background: var(--teal); }
+    #msg { margin-top: 10px; color: var(--teal); min-height: 1.5em; }
+
+    footer { text-align: center; padding: 28px; border-top: 1px solid var(--line); font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <strong>sofia bukhari</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Comparative analysis</a></li>
+      <li><a href="#projects">Community Project on climate change </a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#digital">Digital Skills</a></li>
+      <li><a href="#contact">Do not Contact/a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1>Political Science student building a digital voice.</h1>
+      <p>I study how states, institutions and people shape global affairs. Through the Digitalization for Women Empowerment course, I am learning to code so I can share my work online.</p>
+      <a class="btn" href="#projects">See my work</a>
+    </div>
+    <!-- To add your photo: save it as photo.jpg in this folder, then replace
+         the <span> below with: <img src="photo.jpg" alt="Your Name"> -->
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About me</h2>
+    <p class="narrow">
+      I am a [] student in the Department of Politcal science at harami university, Lahore. My interests include [diplomacy, foreign policy, gender and security, South Asian politics]. I believe digital skills open doors for women in every field, and this portfolio is my first step.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="tags">
+      <span class="tag">Research and writing</span>
+      <span class="tag">Policy analysis</span>
+      <span class="tag">Public speaking</span>
+      <span class="tag">Critical thinking</span>
+      <span class="tag">HTML and CSS (learning)</span>
+      <span class="tag">MS Office</span>
+      <span class="tag">Urdu</span>
+      <span class="tag">English</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="project">
+        <h3>Research paper never did this shit</h3>
+        <p>One or two lines about a paper, thesis or assignment you wrote and what you found.</p>
+      </article>
+      <article class="project">
+        <h3>Model United Nations</h3>
+        <p>Describe the committee, the country you represented and what you achieved.</p>
+      </article>
+      <article class="project">
+        <h3>This portfolio</h3>
+        <p>Built with HTML, CSS and JavaScript in VS Code as part of my digitalization course.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey">
+    <h2>Education idk bro and experience none</h2>
+    <ul class="timeline">
+      <li><b>2026:</b> Short course, Digitalization for Women Empowerment, [University Name]</li>
+      <li><b>2023 to present:</b> BS pol.sci,harami university</li>
+      <li><b>Year:</b> Internship, society or volunteer role (add yours)</li>
+    </ul>
+  </section>
+
+  <!-- DIGITAL SKILLS TRACKER -->
+  <section id="digital">
+    <h2>My digital skills progress</h2>
+    <p>Tick what I have learned so far:</p>
+    <div class="progress"><div id="bar"></div></div>
+    <p id="count">0 of 4 completed</p>
+    <div class="checks">
+      <label><input type="checkbox"> Built a webpage with HTML</label>
+      <label><input type="checkbox"> Styled it with CSS</label>
+      <label><input type="checkbox"> Added interaction with JavaScript</label>
+      <label><input type="checkbox"> Published my portfolio online</label>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="margin-bottom:16px">Email: <a href="mailto:yourname@email.com">yourname@email.com</a> | LinkedIn: <a href="#">add your link</a></p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your name" required>
+      <input type="email" id="email" placeholder="Your email" required>
+      <textarea id="text" rows="4" placeholder="Your message" required></textarea>
+      <button type="submit">Send message</button>
+    </form>
+    <p id="msg" role="status"></p>
+  </section>
+
+  <footer>&copy; 2026 Your Name. Made in VS Code.</footer>
+
+  <script>
+    // Progress tracker: counts ticked boxes and fills the bar
+    const boxes = document.querySelectorAll('.checks input');
+    const bar = document.getElementById('bar');
+    const count = document.getElementById('count');
+    boxes.forEach(box => box.addEventListener('change', () => {
+      const done = [...boxes].filter(b => b.checked).length;
+      bar.style.width = (done / boxes.length * 100) + '%';
+      count.textContent = done + ' of ' + boxes.length + ' completed';
+    }));
+
+    // Contact form: shows a confirmation (no real email is sent without a server)
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      document.getElementById('msg').textContent = 'Thank you, ' + name + '. Your message was received.';
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
