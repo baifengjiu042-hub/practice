@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sofia Bukhari| Professional Portfolio</title>
+
+  <style>
+    /* =====================================================
+       1. COLORS: change these to restyle the whole page
+       ===================================================== */
+    :root {
+      --purple-dark: #2e1650;   /* deepest purple (headings, footer) */
+      --purple: #6b3fa0;        /* main purple */
+      --violet: #8250c0;        /* medium purple */
+      --lilac: #a98bd6;         /* light purple */
+      --purple-soft: #f4effb;   /* very light lavender background */
+      --text: #2a2236;          /* body text */
+      --muted: #6d6580;         /* lighter text */
+      --gradient: linear-gradient(135deg, #2e1650 0%, #5a2d91 55%, #8250c0 100%);
+    }
+
+    /* =====================================================
+       2. BASIC SETTINGS
+       ===================================================== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }   /* no underlines anywhere */
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+
+    /* =====================================================
+       3. NAVIGATION BAR
+       ===================================================== */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(59, 31, 94, 0.1);
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 6px; padding: 12px;
+    }
+    nav a {
+      padding: 6px 16px; border-radius: 20px;
+      font-size: 0.92rem; font-weight: 600; color: var(--purple);
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover { background: var(--purple); color: #ffffff; }
+
+    /* =====================================================
+       4. HEADER (top banner with purple gradient)
+       ===================================================== */
+    header {
+      background: var(--gradient);
+      color: #ffffff;
+      text-align: center;
+      padding: 90px 20px 100px;
+    }
+    header .small {
+      letter-spacing: 3px; text-transform: uppercase;
+      font-size: 0.85rem; opacity: 0.9; margin-bottom: 14px;
+    }
+    header h1 { font-size: clamp(2.4rem, 7vw, 4rem); margin-bottom: 14px; }
+    header .title { font-size: 1.15rem; opacity: 0.95; max-width: 640px; margin: 0 auto; }
+
+    /* =====================================================
+       5. SECTIONS (shared style)
+       ===================================================== */
+    section { max-width: 900px; margin: 0 auto; padding: 70px 24px 10px; }
+    section h2 {
+      font-size: 2rem; color: var(--purple-dark);
+      margin-bottom: 8px;
+    }
+    section .intro { color: var(--muted); margin-bottom: 30px; }
+
+    /* =====================================================
+       6. CARDS (used for Education and Experience)
+       ===================================================== */
+    .card {
+      background: var(--purple-soft);
+      border-left: 6px solid var(--purple);
+      border-radius: 10px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+    .card:nth-child(even) { border-left-color: var(--lilac); }
+    .card h3 { font-size: 1.2rem; color: var(--purple-dark); margin-bottom: 4px; }
+    .card p { color: var(--muted); }
+    .badge {
+      display: inline-block; margin-top: 8px;
+      background: var(--purple); color: #ffffff;
+      font-size: 0.8rem; font-weight: 600;
+      padding: 3px 14px; border-radius: 20px;
+    }
+
+    /* =====================================================
+       7. SKILLS
+       ===================================================== */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .skill {
+      text-align: center; font-weight: 600; color: #ffffff;
+      padding: 22px 10px; border-radius: 10px;
+      background: var(--purple);
+    }
+    .skill:nth-child(3n+2) { background: var(--violet); }
+    .skill:nth-child(3n+3) { background: var(--lilac); }
+
+    /* =====================================================
+       8. ACHIEVEMENTS
+       ===================================================== */
+    .achievements { list-style: none; counter-reset: item; }
+    .achievements li {
+      counter-increment: item;
+      position: relative;
+      background: #ffffff;
+      border: 1px solid #e5dcf0;
+      border-radius: 10px;
+      padding: 16px 20px 16px 70px;
+      margin-bottom: 12px;
+    }
+    .achievements li::before {
+      content: counter(item);
+      position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gradient); color: #ffffff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+    }
+
+    /* =====================================================
+       9. CONTACT
+       ===================================================== */
+    .contact-box {
+      background: var(--purple-soft);
+      border-radius: 10px;
+      padding: 28px;
+    }
+    .contact-box p { margin-bottom: 6px; }
+    .contact-box a { color: var(--purple); font-weight: 600; }
+
+    /* =====================================================
+       10. FOOTER
+       ===================================================== */
+    footer {
+      margin-top: 80px; padding: 26px;
+      background: var(--purple-dark); color: #ffffff;
+      text-align: center; font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HEADER: write your name here -->
+  <header>
+    <p class="small">Professional Portfolio</p>
+    <h1>Sofia Bukhari</h1>
+    <p class="title">MPhil in International Relations | Educator | Event Organizer</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="intro">
+      I am a MPhil scholar in International Relations with teaching experience at government
+      colleges in Multan. I have led student events, represented my university in Model United
+      Nations, and presented research at an international conference. I am interested in
+      diplomacy, global affairs and education, and I bring strong leadership, organizing and
+      analytical skills to every team.
+    </p>
+  </section>
+
+  <!-- EDUCATION: copy one card block to add more -->
+  <section id="education">
+    <h2>Education</h2>
+    <p class="intro">My academic journey in political science and international affairs.</p>
+
+    <div class="card">
+      <h3>MPhil in International Relations</h3>
+      <p>Bahauddin Zikariya University Multan</p>
+      <span class="badge">2025 - 2027</span>
+    </div>
+
+    <div class="card">
+      <h3>Post-Graduate Diploma in International Affairs</h3>
+      <p>The Women University Multan</p>
+      <span class="badge">2024 - 2025</span>
+    </div>
+
+    <div class="card">
+      <h3>BS in Political Science and International Relations</h3>
+      <p>The Women University Multan</p>
+      <span class="badge">2020 - 2024</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="intro">Teaching and academic roles at government colleges.</p>
+
+    <div class="card">
+      <h3>Honorary Lecturer</h3>
+      <p>Govt. Fatima Jinnah Graduate College for Girls, Multan</p>
+      <span class="badge">3 months</span>
+    </div>
+
+    <div class="card">
+      <h3>College Teaching Internship Programme</h3>
+      <p>Govt. Commerce College for Girls, Multan</p>
+      <span class="badge">6 months</span>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="intro">Strengths I use in teaching, research and event management.</p>
+
+    <div class="skills">
+      <div class="skill">Teamwork</div>
+      <div class="skill">Project Management</div>
+      <div class="skill">Leadership</div>
+      <div class="skill">Organizing Events</div>
+      <div class="skill">Critical Analysis</div>
+      <div class="skill">Linguistic Analysis</div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <h2>Achievements and Certificates</h2>
+    <p class="intro">Recognition for leadership, teaching and academic work.</p>
+
+    <ul class="achievements">
+      <li>Certificate of Office Management, IT Office (6 months)</li>
+      <li>Certificate of Appreciation, Member of the Student Executive Council, The Women University Multan</li>
+      <li>Certificate of Appreciation, Participation in Model United Nations 2022</li>
+      <li>Certificate of Appreciation, Chief Organizer, Student-Alumni Get-Together 2023</li>
+      <li>Certificate of Appreciation, Chief Organizer, International Day for Preventing the Exploitation of the Environment in War and Armed Conflict 2023</li>
+      <li>Certificate of Completion, College Teaching Internee, Govt. Associate College of Commerce, Qasimpur Colony, Multan</li>
+      <li>Certificate of Appreciation, Honorary Lecturer, Govt. Fatima Jinnah Graduate College for Girls, Multan</li>
+      <li>Certificate of Participation, Oral Presentation, International Sci-Arts Conference (ISAC-25), Multan</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="intro">I am open to teaching, research and organizing opportunities.</p>
+
+    <div class="contact-box">
+      <p>Email: <a href="mailto:yourname@email.com">sofiabukhari54321@gmail.com</a></p>
+      <p>Location: Multan, Pakistan</p>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Sofia Bukhari. All rights reserved.</footer>
+
+</body>
+</html>
